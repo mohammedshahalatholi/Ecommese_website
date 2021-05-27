@@ -1,0 +1,38 @@
+<section>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
+          <h2 class="text-center">Insert Dealer details</h2>
+        <form action="/admin/edit-product/{{dealer._id}}" method="post" enctype="multipart/form-data">
+          <div class="form-group" >
+            <label for="exampleFormControlInput1">Name of Super Market</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{dealer.name}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Place of Market </label>
+            <input type="text" class="form-control" id="catogary"name="catogary" placeholder="" value="{{dealer.catogary}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Number</label>
+            <input type="text" class="form-control" id="content"name="content" placeholder="" value="{{dealer.content}}">
+          </div>
+
+
+          <div class="form-group">
+             <img  src="/product-image/{{dealer._id}}.jpg" style="width: 100px;height: auto;" id="imageview">
+            <label for=""> Image</label>
+           
+            <input type="file" class="form-control-file" id="image" name="image" onchange="viewimage(event)">
+            <button type="submit" class="btn btn-success mt-3">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<script>
+  function viewimage(event){
+    document.getElementById('imageview').src=URL.createObjectURL(event.target.files[0])
+  }
+</script>

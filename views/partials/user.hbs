@@ -1,0 +1,117 @@
+<header>
+    <nav class="navbar navbar-expand-lg primary">
+                 <style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+</head>
+<body>
+  
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/dealer/dealerlogin">LOGIN AS SELLER</a>
+  <a href="/admin/adminlogin">LOGIN AS ADMIN</a>
+  <a href="#">FeedBack</a>
+  <a href="#">CONTACT</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;USER PANNEL </span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+        <a class="navbar-brand" href="/"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/cart">Chart <span class="badge badge-success" id="cart-count">{{cartcount}}</span></a>
+                    {{#if user}}
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/orders">Orders</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/select-shop">Select to your super market</a>
+                </li>
+                {{/if}}
+
+
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{#if user}}
+                    {{user.name}}
+                    {{else}}
+                    Account
+                    {{/if}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {{#if user}}
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    {{else}}
+                    <a class="dropdown-item" href="/login">Login</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

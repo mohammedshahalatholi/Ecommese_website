@@ -1,0 +1,31 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <form action="/dealer/addproduct/{{this._id}}" method="post" enctype="multipart/form-data">
+          <div class="form-group" >
+            <label for="exampleFormControlInput1">Name of product</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">price</label>
+            <input type="text" class="form-control" id="price"name="price" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">catogary</label>
+            <input type="text" class="form-control" id="catogary"name="catogary" placeholder="">
+          </div>
+
+
+          <div class="form-group">
+           
+            <label for="exampleFormControlFile1">Insert image Logo</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+            <button type="submit" class="btn btn-success mt-3">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

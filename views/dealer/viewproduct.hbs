@@ -1,0 +1,32 @@
+<section>
+  
+    <div class="container p-3">
+      <a href="/dealer/addproduct" class="btn btn-success ml-auto" >Add Product</a>
+        <table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Name of Product</th>
+      <th scope="col">catogary</th>
+      <th scope="col">price</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each product}}
+    <tr>
+      <th scope="row">*</th>
+      <td class="">{{this.name}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.catogary}}</td>
+      <td><img style="width: 50px;height: 50px;" class="" src="/product-image/{{this._id}}.jpg"></td>
+      <td><a href="/dealer/editproduct/{{this._id}}" class="btn btn-primary">Edit</a>
+        <a href="/dealer/deleteproduct/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are want to delete {{this.name}}? ')">Delete</a></td>
+    </tr>
+   
+    {{/each}}
+    
+  </tbody>
+</table>
+    </div>
+</section>
